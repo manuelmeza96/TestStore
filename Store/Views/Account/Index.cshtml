@@ -1,0 +1,40 @@
+﻿<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+</head>
+<body>
+
+    <h3>Login Page</h3>
+    @ViewBag.error
+<form method="post" asp-controller="account" asp-action="login">
+    <div class="icon d-flex align-items-center justify-content-center">
+        <span class="fa fa-user-o"></span>
+    </div>
+    <table>
+        <tr>
+            <td>Username</td>
+            <td>
+                <input type="text" name="username" class="form-control rounded-left" />
+            </td>
+        </tr>
+        <tr>
+            <td></td>            
+        </tr>
+        <tr>
+            <td>Password</td>
+            <td>
+                <input type="password" name="password" class="form-control rounded-left" />
+            </td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>
+                <input type="submit" value="Login" class="form-control btn btn-primary rounded submit px-3" />
+            </td>
+        </tr>
+    </table>
+</form>
+
+</body>
+</html>

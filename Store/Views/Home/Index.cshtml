@@ -1,0 +1,45 @@
+﻿@model IEnumerable<Store.Models.Product>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Store</h1>
+
+<div class="table-responsive">
+    <table class="table">
+        <thead>
+            <tr class="bg-primary"> 
+                <th>
+                   Producto
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Description)
+                </th>
+                <th>
+                    Quantity Available
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Description)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Quantity)
+                    </td>
+                    <td>
+                        <a asp-action="Details" asp-route-id="@item.ProductId">Details</a> 
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
